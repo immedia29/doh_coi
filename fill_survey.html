@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COI Survey</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="survey-container">
+        <div class="survey-header">
+            <a href="dashboard.php" class="back-to-home">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-step active" data-step="1">
+                <div class="progress-dot"></div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="2">
+                <div class="progress-dot"></div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="3"> <div class="progress-dot"></div> </div> <div class="progress-line"></div>
+            <div class="progress-step" data-step="4"> <div class="progress-dot"></div> </div> <div class="progress-line"></div>
+            <div class="progress-step" data-step="5"> <div class="progress-dot"></div> </div> <div class="progress-line"></div>
+            <div class="progress-step" data-step="6"> <div class="progress-dot"></div> </div>
+        </div>
+
+        <form id="coiSurveyForm" action="submit_survey_combined.php" method="POST" class="survey-form">
+            <div class="survey-part active-part" id="part1">
+                <h2>Part 1: Personal Information</h2>
+                <div class="form-section">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="first_name" name="first_name" placeholder=" ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="last_name" name="last_name" placeholder=" ">
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address">Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-home"></i>
+                            <input type="text" id="address" name="address" placeholder=" ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="occupation">Occupation</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-briefcase"></i>
+                            <input type="text" id="occupation" name="occupation" placeholder=" ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder=" ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder=" ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="main_employer">Main Employer</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-building"></i>
+                            <input type="text" id="main_employer" name="main_employer" placeholder=" ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="form-navigation">
+                    <button type="button" class="next-button" onclick="navigateToPart(2)">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="survey-part" id="part2" style="display: none;"> <h2>Part 2: Role in the CPG Development Process</h2>
+
+                <div class="form-section">
+                  <div class="form-container">
+                    <label class="section-sub-label">1. CPG Group Name</label>
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-users"></i>
+                            <input type="text" id="cpg_group_name" name="cpg_group_name" placeholder="CPG Group Name here">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="advocacy_group" name="advocacy_group" class="advocacy-lobby" >Advocacy or Lobby Group
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                 </div>
+                
+
+               
+                    <label class="section-sub-label">2. Role</label>
+                    <div class="role-options-grid">
+                        <div class="radio-option">
+                            <input type="radio" id="role_leader" name="cpg_role" value="Program Leader">
+                            <label for="role_leader">Program Leader</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_coi_review" name="cpg_role" value="COI Review Committee">
+                            <label for="role_coi_review">COI Review Committee</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_program_manager" name="cpg_role" value="Program Manager / Asst. Program Manager">
+                            <label for="role_program_manager">Program Manager / Asst. Program Manager</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_task_force_chair" name="cpg_role" value="Task Force Chair/Co-chair">
+                            <label for="role_task_force_chair">Task Force Chair/Co-chair</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_task_force_steering" name="cpg_role" value="Task Force Steering Committee">
+                            <label for="role_task_force_steering">Task Force Steering Committee</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_technical_lead" name="cpg_role" value="Technical Lead">
+                            <label for="role_technical_lead">Technical Lead</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_evidence_expert" name="cpg_role" value="Evidence Review Expert">
+                            <label for="role_evidence_expert">Evidence Review Expert</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_consensus_panelist" name="cpg_role" value="Consensus Panelist">
+                            <label for="role_consensus_panelist">Consensus Panelist</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_technical_writer" name="cpg_role" value="Technical Writer">
+                            <label for="role_technical_writer">Technical Writer</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_consensus_facilitator" name="cpg_role" value="Consensus Meeting Facilitator">
+                            <label for="role_consensus_facilitator">Consensus Meeting Facilitator</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_admin_officer" name="cpg_role" value="Administrative Officer">
+                            <label for="role_admin_officer">Administrative Officer</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role_others" name="cpg_role" value="Others">
+                            <label for="role_others">Others</label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="role_others_specify_group" style="display: none;">
+                        <label for="role_others_specify">If you selected "Others", please specify:</label>
+                        <textarea id="role_others_specify" name="role_others_specify" placeholder="Please type here..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="previous-button" onclick="navigateToPart(1)">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="button" class="next-button" onclick="navigateToPart(3)"> Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    </div>
+            </div>
+
+            </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
