@@ -91,7 +91,7 @@
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="next-button" onclick="navigateToPart(2)">Next <i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="next-button" onclick="navigateToPart(2)">Next <img src="images/next-btn.png" alt="next button"></button>
             </div>
           </div>
         </div>
@@ -176,8 +176,8 @@
               <textarea id="role_others_specify" name="role_others_specify" placeholder="Please type here..." rows="3"></textarea>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(1)"><i class="fas fa-arrow-left"></i> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(3)">Next <i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(1)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(3)">Next <img src="images/next-btn.png" alt="next button"></button>
             </div>
           </div>
         </div>
@@ -207,15 +207,15 @@
             </div>
 
             <div class="form-group" id="financial_conflict_details_group" style="display: none">
-              <label for="financial_conflict_details">If yes, please provide details (type of material benefit, type of activity, name of pharma/device company/hospitals/diagnostic centers, and date of interaction or activity)</label>
+              <label for="financial_conflict_details">If yes, please provide details (type of material benefit, type of activity, <br> name of pharma/device company/hospitals/diagnostic centers, and date of interaction or activity)</label>
               <div class="textarea-with-icon">
                 <textarea id="financial_conflict_details" name="financial_conflict_details" placeholder="Please type here..." rows="4"></textarea>
                 <i class="fas fa-expand-arrows-alt expand-icon" id="expandTextareaBtn" title="Expand"></i>
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(2)"><i class="fas fa-arrow-left"></i> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(4)">Next <i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(2)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(4)">Next <img src="images/next-btn.png" alt="next button"></button>
             </div>
           </div>
         </div>
@@ -252,8 +252,8 @@
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(3)"><i class="fas fa-arrow-left"></i> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(5)">Next <i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(3)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(5)">Next <img src="images/next-btn.png" alt="next button"></button>
             </div>
           </div>
         </div>
@@ -269,12 +269,12 @@
 
             <div class="yes-no-options">
               <div class="radio-option">
-                <input type="radio" id="other_declarations_yes" name="other_declarations" value="yes" />
-                <label for="other_declarations_yes">Yes</label>
+                <input type="radio" id="other_declarations_conflict_yes" name="other_declarations_conflict" value="yes" />
+                <label for="other_declarations_conflict_yes">Yes</label>
               </div>
               <div class="radio-option">
-                <input type="radio" id="other_declarations_no" name="other_declarations" value="no" />
-                <label for="other_declarations_no">No</label>
+                <input type="radio" id="other_declarations_conflict_no" name="other_declarations_conflict" value="no" />
+                <label for="other_declarations_conflict_no">No</label>
               </div>
             </div>
 
@@ -286,8 +286,8 @@
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(4)"><i class="fas fa-arrow-left"></i> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(6)">Next <i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(4)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(6)">Next <img src="images/next-btn.png" alt="next button"></button>
             </div>
           </div>
         </div>
@@ -296,6 +296,23 @@
           <div class="modal-content">
             <button type="button" class="modal-close-btn" id="modalCloseBtn" title="Close"><i class="fas fa-times"></i></button>
             <textarea id="modalTextarea" placeholder="Please type here..."></textarea>
+          </div>
+        </div>
+
+        <div class="survey-part" id="part6" style="display: none">
+          <h2>Part 4: Uploading a CV</h2>
+
+          <div class="form-section">
+            <div class="form-container">
+              <p class="cvTitle">Upload a resume or CV by clicking the button below.</p>
+              <p class="cvText">Files uploaded should be in a .pdf format.</p>
+            </div>
+
+            <button type="button" class="upload-cv-btn" id="uploadCvBtn"><img src="images/upload.png" alt=""> Upload CV</button>
+            <div class="form-navigation">
+              <button type="button" class="previous-button" onclick="navigateToPart(5)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(6)">Next <img src="images/next-btn.png" alt="next button"></button>
+            </div>
           </div>
         </div>
       </form>
