@@ -251,7 +251,10 @@ body {
 
 .form-group {
   margin-bottom: 10px;
-  /* width: 25vw; */
+  width: 25vw;
+}
+.form-group-bottom {
+  width: 20vw;
 }
 #role_others_specify_group {
   width: 25vw;
