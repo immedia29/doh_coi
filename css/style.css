@@ -215,7 +215,11 @@ body {
   border-radius: 50%;
   border: 3px solid #fff;
   transition: all 0.3s ease;
+  background-image: url(/images/check.png);
+  background-repeat:round;
+  /* content:url(/images/check.png); */
 }
+
 
 .progress-step.active .progress-dot {
   background-color: #7fcb84;
@@ -315,15 +319,16 @@ body {
   border-radius: 25px;
   box-shadow: 2px 7px 15px #4b8368bf;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   transition: background-color 0.3s ease;
 }
 
-.next-button i {
-  margin-left: 60px;
+.next-button img {
+  margin-left: 55px;
+  width: 20px;
 }
 
 .next-button:hover {
@@ -345,7 +350,7 @@ body {
 /* css for Part 2 */
 
 .survey-part {
-  padding-top: 20px;
+  padding-top: 1px;
 }
 
 .form-section {
@@ -523,11 +528,12 @@ body {
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
-/* Part 3, 4, & 5 */
+/* Part 3-6 */
 
 #part3 .form-container,
 #part4 .form-container,
-#part5 .form-container {
+#part5 .form-container,
+#part6 .form-container {
   max-width: 100%;
   color: #008d3e;
 }
@@ -542,6 +548,33 @@ body {
   font-size: 1em;
   line-height: 1.5;
   margin-bottom: 15px;
+}
+.cvTitle {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+}
+.cvText {
+  font-size: 0.9em;
+  font-family: Barlow-Medium;
+  margin: .5vh 0;
+}
+.upload-cv-btn {
+  background-image: linear-gradient(to bottom right, #545654, #4b4c4b);
+  color: #ffff;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: Barlow-Bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.upload-cv-btn img {
+  width: 13%;
 }
 
 #part3 .form-container ol,
@@ -574,6 +607,7 @@ body {
 /* Textarea with Expand Icon */
 .textarea-with-icon {
   position: relative;
+  width: 75%;
 }
 
 .textarea-with-icon textarea {
@@ -670,9 +704,11 @@ body {
   justify-content: end;
   gap: 10px;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 10vh;
 }
-
+#part6 .form-navigation {
+  margin-top: 25vh;
+}
 .previous-button {
   background-color: #dee0df;
   color: #1b5749;
@@ -680,14 +716,15 @@ body {
   border: 1px solid transparent;
   border-radius: 25px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: Barlow-Bold;
   display: inline-flex;
   align-items: center;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-.previous-button i {
+.previous-button img {
   margin-right: 25.5px;
+  width: 20px;
 }
 .previous-button:hover {
   background-color: #e0e0e0;
@@ -701,7 +738,9 @@ body {
 .progress-step.completed .progress-dot {
   background-color: #7fcb84;
   border-color: #7fcb84;
+  content: "";
 }
 .progress-line.active-line {
   background-color: #7fcb84 !important;
+  
 }
