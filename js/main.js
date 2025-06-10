@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
     activeTextarea = null;
   }
 
-  // Section A (Financial Conflicts)
+  // Financial Conflicts
   const expandBtn_A = document.getElementById('expandTextareaBtn');
   const textarea_A = document.getElementById('financial_conflict_details');
   if (expandBtn_A) {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Section B (Non-financial Conflicts)
+  // Non-financial Conflicts
   const expandBtn_B = document.getElementById('expandTextareaBtn_B');
   const textarea_B = document.getElementById('non_financial_conflict_details');
   if (expandBtn_B) {
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Section C (Other Declarations)
+  // Other Declarations
   const expandBtn_C = document.getElementById('expandTextareaBtn_C');
   const textarea_C = document.getElementById('other_declarations_details');
   if (expandBtn_C) {
@@ -161,9 +161,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  const conflictRadios = document.querySelectorAll('input[name="financial_conflict"]');
+  const conflictDetailsGroup = document.getElementById('financial_conflict_details_group');
+  const conflictTextarea = document.getElementById('financial_conflict_details');
   const nonConflictRadios = document.querySelectorAll('input[name="non_financial_conflict"]');
   const nonConflictDetailsGroup = document.getElementById('non_financial_conflict_details_group');
   const nonConflictTextarea = document.getElementById('non_financial_conflict_details');
+  const otherDeclarationsRadios = document.querySelectorAll('input[name="other_declarations_conflict"]');
+  const otherDeclarationsDetailsGroup = document.getElementById('other_declarations_details_group');
+  const otherDeclarationsTextarea = document.getElementById('other_declarations_details');
+
+  conflictRadios.forEach((radio) => {
+    radio.addEventListener('change', function () {
+      if (this.id === 'financial_conflict_yes' && this.checked) {
+        conflictDetailsGroup.style.display = 'block';
+      } else {
+        conflictDetailsGroup.style.display = 'none';
+        conflictTextarea.value = '';
+      }
+    });
+  });
 
   nonConflictRadios.forEach((radio) => {
     radio.addEventListener('change', function () {
@@ -172,6 +189,17 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         nonConflictDetailsGroup.style.display = 'none';
         nonConflictTextarea.value = '';
+      }
+    });
+  });
+
+  otherDeclarationsRadios.forEach((radio) => {
+    radio.addEventListener('change', function () {
+      if (this.id === 'other_declarations_conflict_yes' && this.checked) {
+        otherDeclarationsDetailsGroup.style.display = 'block';
+      } else {
+        otherDeclarationsDetailsGroup.style.display = 'none';
+        otherDeclarationsTextarea.value = '';
       }
     });
   });
