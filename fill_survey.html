@@ -10,10 +10,13 @@
   <body>
     <div class="survey-container">
       <div class="survey-header">
-        <a href="dashboard.html" class="back-to-home"> <i class="fas fa-arrow-left"></i> Back to Home </a>
+        <a href="dashboard.html" class="back-to-home">
+          <img src="images/backBtn.png" alt="Back to Home" />
+          Back to Home
+        </a>
       </div>
 
-      <div class="progress-bar-container">
+      <div id="progress-bar-container" class="progress-bar-container">
         <div class="progress-step active" data-step="1">
           <div class="progress-dot"></div>
         </div>
@@ -32,6 +35,7 @@
       </div>
 
       <form id="coiSurveyForm" class="survey-form">
+        <!-- Survey Part 1 -->
         <div class="survey-part active-part" id="part1">
           <h2>Part 1: Personal Information</h2>
           <div class="form-section">
@@ -91,14 +95,13 @@
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="next-button" onclick="navigateToPart(2)">Next <img src="images/next-btn.png" alt="next button"></button>
+              <button type="button" class="next-button" onclick="navigateToPart(2)">Next <img src="images/next-btn.png" alt="next button" /></button>
             </div>
           </div>
         </div>
-
+        <!-- Survey Part 2 -->
         <div class="survey-part" id="part2" style="display: none">
           <h2>Part 2: Role in the CPG Development Process</h2>
-
           <div class="form-section">
             <div class="form-container">
               <label class="section-sub-label">1. CPG Group Name</label>
@@ -176,14 +179,14 @@
               <textarea id="role_others_specify" name="role_others_specify" placeholder="Please type here..." rows="3"></textarea>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(1)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(3)">Next <img src="images/next-btn.png" alt="next button"></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(1)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(3)">Next <img src="images/next-btn.png" alt="next button" /></button>
             </div>
           </div>
         </div>
+        <!-- Survey Part 3 A -->
         <div class="survey-part" id="part3" style="display: none">
           <h2>Part 3: Conflicts of Interest Declarations</h2>
-
           <div class="form-section">
             <div class="form-container">
               <h3 class="subsection-title">A. Financial Conflicts</h3>
@@ -207,22 +210,24 @@
             </div>
 
             <div class="form-group" id="financial_conflict_details_group" style="display: none">
-              <label for="financial_conflict_details">If yes, please provide details (type of material benefit, type of activity, <br> name of pharma/device company/hospitals/diagnostic centers, and date of interaction or activity)</label>
+              <label for="financial_conflict_details"
+                >If yes, please provide details (type of material benefit, type of activity, <br />
+                name of pharma/device company/hospitals/diagnostic centers, and date of interaction or activity)</label
+              >
               <div class="textarea-with-icon">
                 <textarea id="financial_conflict_details" name="financial_conflict_details" placeholder="Please type here..." rows="4"></textarea>
-                <i class="fas fa-expand-arrows-alt expand-icon" id="expandTextareaBtn" title="Expand"></i>
+                <img src="images/expandBtn.png" alt="Expand Icon" class="expand-icon" id="expandTextareaBtn" title="Expand" />
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(2)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(4)">Next <img src="images/next-btn.png" alt="next button"></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(2)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(4)">Next <img src="images/next-btn.png" alt="next button" /></button>
             </div>
           </div>
         </div>
-
+        <!-- Survey Part 3 B -->
         <div class="survey-part" id="part4" style="display: none">
           <h2>Part 3: Conflicts of Interest Declarations</h2>
-
           <div class="form-section">
             <div class="form-container">
               <h3 class="subsection-title">B. Non-financial Conflicts</h3>
@@ -248,16 +253,16 @@
               <label for="non_financial_conflict_details">If yes, please provide details (activity and date)</label>
               <div class="textarea-with-icon">
                 <textarea id="non_financial_conflict_details" name="non_financial_conflict_details" placeholder="Please type here..." rows="4"></textarea>
-                <i class="fas fa-expand-arrows-alt expand-icon" id="expandTextareaBtn_B" title="Expand"></i>
+                <img src="images/expandBtn.png" alt="Expand Icon" class="expand-icon" id="expandTextareaBtn_B" title="Expand" />
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(3)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(5)">Next <img src="images/next-btn.png" alt="next button"></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(3)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(5)">Next <img src="images/next-btn.png" alt="next button" /></button>
             </div>
           </div>
         </div>
-
+        <!-- Survey Part 3 C -->
         <div class="survey-part" id="part5" style="display: none">
           <h2>Part 3: Conflicts of Interest Declarations</h2>
 
@@ -278,16 +283,16 @@
               </div>
             </div>
 
-            <div class="form-group" id="other_declarations_details_group" style="display: none">
-              <label for="other_declarations_details">If yes, please provide details (activity and date)</label>
+            <div class="form-group" id="other_declarations_conflict_details_group" style="display: none">
+              <label for="other_declarations_conflict_details">If yes, please provide details (activity and date)</label>
               <div class="textarea-with-icon">
-                <textarea id="other_declarations_details" name="other_declarations_details" placeholder="Please type here..." rows="4"></textarea>
-                <i class="fas fa-expand-arrows-alt expand-icon" id="expandTextareaBtn_C" title="Expand"></i>
+                <textarea id="other_declarations_conflict_details" name="other_declarations_conflict_details" placeholder="Please type here..." rows="4"></textarea>
+                <img src="images/expandBtn.png" alt="Expand Icon" class="expand-icon" id="expandTextareaBtn_C" title="Expand" />
               </div>
             </div>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(4)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(6)">Next <img src="images/next-btn.png" alt="next button"></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(4)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(6)">Next <img src="images/next-btn.png" alt="next button" /></button>
             </div>
           </div>
         </div>
@@ -298,26 +303,140 @@
             <textarea id="modalTextarea" placeholder="Please type here..."></textarea>
           </div>
         </div>
-
+        <!-- Survey Part 4 -->
         <div class="survey-part" id="part6" style="display: none">
           <h2>Part 4: Uploading a CV</h2>
-
           <div class="form-section">
             <div class="form-container">
               <p class="cvTitle">Upload a resume or CV by clicking the button below.</p>
               <p class="cvText">Files uploaded should be in a .pdf format.</p>
             </div>
 
-            <button type="button" class="upload-cv-btn" id="uploadCvBtn"><img src="images/upload.png" alt=""> Upload CV</button>
+            <button type="button" class="upload-cv-btn" id="uploadCvBtn"><img src="images/upload.png" alt="" /> Upload CV</button>
             <div class="form-navigation">
-              <button type="button" class="previous-button" onclick="navigateToPart(5)"><img src="images/prev-btn.png" alt="previous button"> Previous</button>
-              <button type="button" class="next-button" onclick="navigateToPart(6)">Next <img src="images/next-btn.png" alt="next button"></button>
+              <button type="button" class="previous-button" onclick="navigateToPart(5)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
+              <button type="button" class="next-button" onclick="navigateToPart(7)">Next <img src="images/next-btn.png" alt="next button" /></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Survey Summary -->
+        <div class="survey-part" id="part7" style="display: none">
+          <h2>Your Survey Answers</h2>
+
+          <div class="summary-container">
+            <!-- Summary Section Part 1 -->
+            <div class="summary-section" id="summary_part1">
+              <h4>Part 1: Personal Information</h4>
+              <div class="summary-grid-part1">
+                <div class="summary-item">
+                  <img src="images/nameIcon.png" alt="Name Icon" />
+                  <div>
+                    <span class="summary-label">Name</span>
+                    <span class="summary-value" data-summary-for="first_name,last_name"></span>
+                  </div>
+                </div>
+                <div class="summary-item">
+                  <img src="images/addressIcon.png" alt="Address Icon" />
+                  <div>
+                    <span class="summary-label">Address</span>
+                    <span class="summary-value" data-summary-for="address"></span>
+                  </div>
+                </div>
+                <div class="summary-item">
+                  <img src="images/occupationIcon.png" alt="Occupation Icon" />
+                  <div>
+                    <span class="summary-label">Occupation</span>
+                    <span class="summary-value" data-summary-for="occupation"></span>
+                  </div>
+                </div>
+                <div class="summary-item">
+                  <img src="images/employerIcon.png" alt="Employer Icon" />
+                  <div>
+                    <span class="summary-label">Main Employer</span>
+                    <span class="summary-value" data-summary-for="main_employer"></span>
+                  </div>
+                </div>
+                <div class="summary-item">
+                  <img src="images/emailIcon.png" alt="Email Icon" />
+                  <div>
+                    <span class="summary-label">Email</span>
+                    <span class="summary-value" data-summary-for="email"></span>
+                  </div>
+                </div>
+                <div class="summary-item">
+                  <img src="images/phoneIcon.png" alt="Phone Icon" />
+                  <div>
+                    <span class="summary-label">Phone No.</span>
+                    <span class="summary-value" data-summary-for="phone"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Section Part 2 -->
+            <div class="summary-section" id="summary_part2">
+              <h4>Part 2: Role in the CPG Development Process</h4>
+              <div class="summary-grid-part2">
+                <div>
+                  <span class="summary-label">1. CPG Group Name</span>
+                  <!-- <img src="images/cpgGroupIcon.png" alt="CPG Group Icon" /> -->
+                  <div class="summary-box" data-summary-for="cpg_group_name"><img src="images/cpgGroupIcon.png" alt="CPG Group Icon" /></div>
+                </div>
+                <div>
+                  <span class="summary-label">2. Role</span>
+                  <div class="summary-box" data-summary-for="cpg_role"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Section Part 3 -->
+            <div class="summary-section" id="summary_part3">
+              <h4>Part 3: Conflicts of Interest Declarations</h4>
+
+              <!-- A. Financial Conflicts -->
+              <div class="summary-item-long dotted-bottom">
+                <span class="summary-label">A. Financial Conflicts</span>
+                <p>Have you or an immediate family member received or could potentially receive material benefits for activities in the last 4 years from a commercial entity with an interest in the CPG recommendations?</p>
+                <div class="summary-answer-box" data-summary-for="financial_conflict"></div>
+                <div class="summary-details-box" data-summary-for="financial_conflict_details">
+                  <div class="summary-details-content"></div>
+                  <i class="fas fa-expand-arrows-alt expand-icon-summary" id="summary_expand_financial_conflict" title="Expand Details"></i>
+                </div>
+              </div>
+
+              <!-- B. Non-financial Conflicts -->
+              <div class="summary-item-long dotted-bottom">
+                <span class="summary-label">B. Non-financial Conflicts</span>
+                <p>Have you received intellectual benefits from activities that might lead to pre-judgement during CPG deliberations?</p>
+                <div class="summary-answer-box" data-summary-for="non_financial_conflict"></div>
+                <div class="summary-details-box" data-summary-for="non_financial_conflict_details"></div>
+              </div>
+
+              <!-- C. Other Declarations -->
+              <div class="summary-item-long">
+                <span class="summary-label">C. Other Declarations</span>
+                <p>Are there any other declarations you might want to make that may be perceived as affecting your judgements in this CPG development process?</p>
+                <div class="summary-answer-box" data-summary-for="other_declarations_conflict"></div>
+                <div class="summary-details-box" data-summary-for="other_declarations_conflict_details"></div>
+              </div>
+            </div>
+
+            <!-- Part 4: CV Upload -->
+            <div class="summary-section" id="summary_part4">
+              <h4>Part 4: Uploading a CV</h4>
+              <button type="button" class="review-cv-button">Review your CV</button>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="previous-button" onclick="navigateToPart(6)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
+              <button type="submit" class="submit-button">Save <img src="images/saveIcon.png" alt="Save" /></button>
             </div>
           </div>
         </div>
       </form>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/survey.js"></script>
   </body>
 </html>
