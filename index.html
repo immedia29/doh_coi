@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COI Survey - Login</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COI Portal - Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  </head>
+  <body>
     <div class="login-container">
-        <h2>Login to COI Portal</h2>
-        <form action="login_process.php" method="POST">
-            <div class="form-group">
-                <label for="username">Username or Email:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Login</button>
+      <div class="login-wrapper">
+        <header class="login-header">
+          <img src="images/logo.png" alt="logo" />
+          <h1>COI</h1>
+        </header>
+
+        <form>
+          <div class="input-group">
+            <label for="username">Username/Email</label>
+            <img src="images/userLogin.png" alt="user login" class="loginIcons" />
+            <input type="text" id="username" name="username" class="input-field" placeholder="user@gmail.com" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <img src="images/password.png" alt="password" class="loginIcons" />
+            <input type="password" id="password" name="password" class="input-field" placeholder="••••••••" required />
+            <img src="images/eyeIcon.png" alt="Show Password" class="toggle-password" id="togglePassword" />
+          </div>
+          <div class="options-group">
+            <input type="checkbox" id="privacyPolicy" />
+            <label for="privacyPolicy" class="custom-checkbox"></label>
+            <label for="privacyPolicy">I have read the <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</label>
+          </div>
+          <button type="submit" class="login-button" id="loginBtn" disabled>Login</button>
         </form>
-        </div>
-</body>
+      </div>
+    </div>
+
+    <img src="images/wave.png" alt="background" class="backgroundWave" />
+    <script src="js/main.js"></script>
+  </body>
 </html>
