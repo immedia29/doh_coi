@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const modalTextarea = document.getElementById('modalTextarea');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
 
+  // submission modal elements
+  const submissionModal = document.getElementById('submissionModal');
+  const mainForm = document.getElementById('coiSurveyForm');
+  const submissionTypeInput = document.getElementById('submission_type');
+
   const totalParts = surveyParts.length;
   let currentPart = 1;
   let activeTextarea = null;
@@ -169,6 +174,35 @@ document.addEventListener('DOMContentLoaded', function () {
       if (event.target === modal) {
         closeModal();
       }
+    });
+  }
+
+  //======================================================================
+  // FINAL SUBMISSION LOGIC
+
+  if (mainForm) {
+    mainForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (submissionModal) {
+        submissionModal.style.display = 'flex';
+      }
+    });
+  }
+
+  const saveAsDraftBtn = document.getElementById('saveAsDraftBtn');
+  if (saveAsDraftBtn) {
+    saveAsDraftBtn.addEventListener('click', function () {
+      if (submissionTypeInput) submissionTypeInput.value = 'draft';
+      if (mainForm) mainForm.submit();
+    });
+  }
+
+  const saveAndSubmitBtn = document.getElementById('saveAndSubmitBtn');
+  if (saveAndSubmitBtn) {
+    saveAndSubmitBtn.addEventListener('click', function () {
+      if (submissionTypeInput) submissionTypeInput.value = 'final';
+      if (mainForm) mainForm.submit();
     });
   }
 
