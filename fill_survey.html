@@ -35,6 +35,7 @@
       </div>
 
       <form id="coiSurveyForm" class="survey-form">
+        <input type="hidden" id="submission_type" name="submission_type" value="" />
         <!-- Survey Part 1 -->
         <div class="survey-part active-part" id="part1">
           <h2>Part 1: Personal Information</h2>
@@ -431,6 +432,29 @@
             <div class="form-navigation">
               <button type="button" class="previous-button" onclick="navigateToPart(6)"><img src="images/prev-btn.png" alt="previous button" /> Previous</button>
               <button type="submit" class="submit-button">Save <img src="images/saveIcon.png" alt="Save" /></button>
+            </div>
+
+            <div class="modal-overlay" id="submissionModal" style="display: none">
+              <div class="submission-modal-content">
+                <h3>How would you like to save your survey?</h3>
+                <p>Choosing <span class="save-as-draft">Save as Draft</span> enables you to come back and edit your survey further, while choosing <span class="save-and-submit">Save and Submit</span> sends your survey for review.</p>
+                <div class="submission-modal-actions">
+                  <button type="button" id="saveAsDraftBtn" class="modal-button draft-btn">Save as Draft</button>
+                  <button type="button" id="saveAndSubmitBtn" class="modal-button submit-btn">Save and Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-overlay" id="finalSubmitModal" style="display: none">
+              <div class="submission-modal-content final-warning-modal">
+                <h3>Are you sure that you would like to save and submit your survey?</h3>
+                <p class="warning-text">You cannot edit your survey unless you are contacted for changes.</p>
+                <p>Please make sure to finalize your answers before proceeding.</p>
+                <div class="submission-modal-actions">
+                  <button type="button" id="backToSurveyBtn" class="modal-button draft-btn">Back to Survey</button>
+                  <button type="button" id="proceedSubmitBtn" class="modal-button submit-btn">Proceed</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
