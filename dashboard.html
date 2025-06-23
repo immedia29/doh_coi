@@ -71,6 +71,49 @@
     </div>
     <img src="images/wave.png" alt="background" class="backgroundWave" />
 
+    <div class="status-modal-overlay" id="statusModal" style="display: none">
+      <div class="status-modal-content">
+        <h3>Thank you!</h3>
+        <p id="statusModalMessage"></p>
+
+        <button type="button" id="closeStatusModalBtn" class="status-modal-close-btn">Close</button>
+      </div>
+    </div>
     <script src="js/main.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const statusModal = document.getElementById('statusModal');
+        const closeBtn = document.getElementById('closeStatusModalBtn');
+        const modalMessage = document.getElementById('statusModalMessage');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+
+        if (status === 'draft_saved') {
+          if (modalMessage) {
+            modalMessage.textContent = 'Your survey has been saved as draft.';
+          }
+          if (statusModal) {
+            statusModal.style.display = 'flex';
+          }
+        } else if (status === 'final_submitted') {
+          if (modalMessage) {
+            modalMessage.textContent = 'Your survey has been successfully submitted for review.';
+          }
+          if (statusModal) {
+            statusModal.style.display = 'flex';
+          }
+        }
+
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function () {
+            if (statusModal) {
+              statusModal.style.display = 'none';
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
