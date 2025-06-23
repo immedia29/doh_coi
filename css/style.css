@@ -829,7 +829,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 15px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: 0.3s ease, 0.3s ease;
 }
 .upload-cv-btn img {
   width: 13%;
@@ -1179,4 +1179,133 @@ body {
 }
 .progress-line.active-line {
   background-color: #7fcb84 !important;
+}
+
+/* modal/prompt */
+
+.submission-modal-content {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.submission-modal-content h3 {
+  font-size: 1.5em;
+  font-family: Barlow-Bold;
+  color: #2d564a;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.submission-modal-content p {
+  color: #7c7c7c;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-family: Barlow-Regular;
+}
+.submission-modal-content p .save-as-draft {
+  color: #383838;
+  font-family: Barlow-Bold;
+}
+.submission-modal-content p .save-and-submit {
+  color: #008d3e;
+  font-family: Barlow-Bold;
+}
+.submission-modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-button {
+  /* flex-grow: 1; */
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  font-family: Barlow-Bold;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.draft-btn {
+  background-image: linear-gradient(to bottom right, #545654, #4b4c4b);
+  box-shadow: 2px 7px 15px rgba(0, 0, 0, 0.378);
+}
+.draft-btn:hover {
+  border-color: #bbb;
+}
+
+.submit-btn {
+  background-image: linear-gradient(to bottom right, #74b67d, #4b8368);
+  box-shadow: 2px 7px 15px #4b8368bf;
+}
+.submit-btn:hover {
+  border-color: #1b5749;
+}
+
+/* Styles for the status/thank you modal on the dashboard */
+.status-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.status-modal-content {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.status-modal-content h3 {
+  margin-top: 0;
+  font-size: 1.6em;
+}
+
+.status-modal-close-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  background-image: linear-gradient(to bottom right, #74b67d, #4b8368);
+  color: #ffff;
+  font-size: 0.9em;
+  font-family: Barlow-Bold;
+  cursor: pointer;
+}
+
+.final-warning-modal {
+  max-width: 550px;
+}
+
+.final-warning-modal .warning-text {
+  color: #cb6562;
+  font-family: Barlow-Bold;
 }
