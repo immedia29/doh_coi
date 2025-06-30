@@ -201,6 +201,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const saveAndSubmitBtn = document.getElementById('saveAndSubmitBtn');
   if (saveAndSubmitBtn) {
     saveAndSubmitBtn.addEventListener('click', function () {
+      if (submissionModal) submissionModal.style.display = 'none';
+      if (finalSubmitModal) finalSubmitModal.style.display = 'flex';
+    });
+  }
+
+  const backToSurveyBtn = document.getElementById('backToSurveyBtn');
+  if (backToSurveyBtn) {
+    backToSurveyBtn.addEventListener('click', function () {
+      if (finalSubmitModal) finalSubmitModal.style.display = 'none';
+      if (submissionModal) submissionModal.style.display = 'flex';
+    });
+  }
+
+  const proceedSubmitBtn = document.getElementById('proceedSubmitBtn');
+  if (proceedSubmitBtn) {
+    proceedSubmitBtn.addEventListener('click', function () {
       if (submissionTypeInput) submissionTypeInput.value = 'final';
       if (mainForm) mainForm.submit();
     });
